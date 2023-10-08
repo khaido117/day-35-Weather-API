@@ -41,9 +41,8 @@ data = response.json()
 hourly_data = data["hourly"][0:13]
 for item in hourly_data:
     weather_id = hourly_data[0]["weather"][0]["id"]
-    if int(weather_id) > 700:
+    if int(weather_id) < 700:
         will_rain = True
 
 if will_rain:
     send_sms()
-
